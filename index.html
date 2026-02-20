@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>陈陆龙 | 创意策划简历</title>
+    
+    <!-- 引入 Google Fonts: Noto Sans SC (中文) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <!-- 引入 Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- 引入 FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- 配置 Tailwind 主题色 -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            DEFAULT: '#FF6600', /* 核心橙色 */
+                            hover: '#E65C00',
+                            dark: '#333333',
+                            light: '#FFF5F0' /* 极淡的橙色背景 */
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Noto Sans SC"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            color: #333;
+        }
+
+        /* 模拟背景波点纹理 */
+        .bg-dot-pattern {
+            background-image: radial-gradient(#e5e7eb 1.5px, transparent 1.5px);
+            background-size: 24px 24px;
+        }
+
+        /* 装饰性背景大字 */
+        .decor-text {
+            -webkit-text-stroke: 2px rgba(255, 102, 0, 0.08);
+            color: transparent;
+            font-weight: 900;
+            line-height: 1;
+            pointer-events: none;
+        }
+        
+        /* 吉祥物动画 */
+        .mascot-hover:hover {
+            transform: rotate(10deg) scale(1.1);
+        }
+
+        /* 技能标签样式 */
+        .skill-tag {
+            background: #fff;
+            border: 1px solid #eee;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 0.875rem;
+            color: #555;
+            transition: all 0.3s;
+        }
+        .skill-tag:hover {
+            background: #FF6600;
+            color: white;
+            border-color: #FF6600;
+        }
+    </style>
+</head>
+<body class="bg-white">
+
+    <!-- 1. Header 导航栏 -->
+    <header class="fixed w-full top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100 shadow-sm transition-all duration-300">
+        <div class="container mx-auto px-6 h-20 flex items-center justify-between">
+            <!-- Logo -->
+            <div class="flex items-center gap-2 font-black text-2xl tracking-tighter">
+                <span class="bg-brand text-white px-2 py-1 rounded">CL</span>
+                CHEN LULONG
+            </div>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center gap-8 font-bold text-sm text-gray-600">
+                <a href="#experience" class="hover:text-brand transition-colors">工作经历</a>
+                <a href="#about" class="hover:text-brand transition-colors">个人简介</a>
+                <a href="#skills" class="hover:text-brand transition-colors">专业技能</a>
+                <a href="#contact" class="hover:text-brand transition-colors">联系方式</a>
+            </nav>
+
+            <!-- CTA Button (已修改为一键复制) -->
+            <button onclick="copyContact('929047309@qq.com', this)" class="hidden md:flex items-center gap-2 bg-brand text-white px-6 py-2.5 rounded font-bold hover:bg-brand-hover transition-all shadow-lg shadow-brand/20">
+                <i class="fa-regular fa-copy"></i>
+                <span>复制邮箱</span>
+            </button>
+
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-2xl text-brand-dark">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- 2. Hero Section 首屏大图 -->
+    <section class="relative h-screen min-h-[600px] flex items-center overflow-hidden pt-20">
+        <!-- 背景图 (高亮风格) -->
+        <div class="absolute inset-0 z-0">
+            <!-- 替换为办公/创意相关的图片 -->
+            <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2670&auto=format&fit=crop" 
+                 class="w-full h-full object-cover object-center opacity-80" 
+                 alt="Creative Workspace">
+            <!-- 叠加高亮渐变 -->
+            <div class="absolute inset-0 bg-gradient-to-r from-white/20 via-white/10 to-transparent"></div>
+            <div class="absolute inset-0 bg-white/30 backdrop-blur-[2px]"></div>
+        </div>
+
+        <!-- 标语内容 -->
+        <div class="container mx-auto px-6 relative z-10 mt-10">
+            <p class="text-brand font-bold text-xl md:text-2xl mb-4 tracking-widest animate-pulse">
+                CREATIVE PLANNER & AI OPERATOR
+            </p>
+            <h1 class="text-6xl md:text-7xl font-black leading-[1.2] text-gray-900 drop-shadow-sm mb-6">
+                洞察<span class="text-brand">数据</span>增长，<br>
+                AI重塑<span class="text-brand">创意</span>效率。
+            </h1>
+            
+            <p class="text-xl text-gray-700 font-bold mb-10 max-w-2xl leading-relaxed">
+                我是陈陆龙，一名复合型广告创意策划。<br>
+                擅长将 SEO数据洞察 与 AI自动化工作流 结合，驱动业务指数级增长。
+            </p>
+            
+            <div class="inline-flex flex-col md:flex-row gap-4">
+                <a href="#contact" class="inline-flex items-center justify-center gap-3 bg-brand text-white px-8 py-4 rounded font-bold hover:bg-brand-hover transition-all shadow-xl text-lg">
+                    联系我获取完整简历
+                    <i class="fa-solid fa-arrow-down"></i>
+                </a>
+                <div class="inline-flex items-center gap-4 bg-white/80 backdrop-blur px-6 py-4 rounded border-l-4 border-gray-800 shadow-lg">
+                    <div class="flex flex-col">
+                        <span class="text-xs text-gray-500 font-bold">CURRENT STATUS</span>
+                        <span class="font-bold">求职中 | 广告/公关/游戏策划</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 滚动提示 -->
+        <div class="absolute bottom-8 right-8 animate-bounce hidden md:block">
+            <div class="w-16 h-16 rounded-full border-2 border-brand/50 flex items-center justify-center bg-white/50 backdrop-blur">
+                <i class="fa-solid fa-arrow-down text-brand text-xl"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Experience Section 工作经历 (现已提前) -->
+    <section id="experience" class="py-24 bg-brand-light">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="text-brand font-bold tracking-widest block mb-2">EXPERIENCE</span>
+                <h2 class="text-4xl font-black">工作经历</h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Job 1: 畅玩集团 (核心) -->
+                <div class="group bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2 border-t-4 border-brand">
+                    <div class="p-8">
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="bg-brand text-white text-xs font-bold px-3 py-1 rounded">2025.04 - 至今</div>
+                            <i class="fa-solid fa-gamepad text-gray-300 text-2xl group-hover:text-brand transition-colors"></i>
+                        </div>
+                        <h3 class="text-2xl font-black mb-1">畅玩集团</h3>
+                        <p class="text-brand font-bold mb-4">网站编辑部 | 运营编辑</p>
+                        
+                        <ul class="space-y-3 text-sm text-gray-600 leading-relaxed mb-6">
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-brand mt-1 text-xs"></i>
+                                <span><strong>高营收增长：</strong>负责海外代充/魔域/CSGO等项目。月均收入9000+，峰值3.6W+。魔域接手后增长563.6%。</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-brand mt-1 text-xs"></i>
+                                <span><strong>0-1新业务：</strong>快速搭建三角洲行动、KK对战平台新业务框架。</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-brand mt-1 text-xs"></i>
+                                <span><strong>AI自动化：</strong>构建自动化发文/修图工作流，效率提升2-5倍。Geo优化海外网站，驱动AI搜索结果。</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Job 2: 实习经历 -->
+                <div class="group bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2 border-t-4 border-gray-300">
+                    <div class="p-8">
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="bg-gray-200 text-gray-600 text-xs font-bold px-3 py-1 rounded">2022.07 - 2022.08</div>
+                            <i class="fa-solid fa-pen-nib text-gray-300 text-2xl group-hover:text-gray-800 transition-colors"></i>
+                        </div>
+                        <h3 class="text-xl font-black mb-1">福建城轨文化发展</h3>
+                        <p class="text-gray-600 font-bold mb-4">美术设计实习生</p>
+                        
+                        <ul class="space-y-3 text-sm text-gray-600 leading-relaxed mb-6">
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-gray-400 mt-1 text-xs"></i>
+                                <span>负责电商广告图片制作、产品精修、页面布局及活动配图。</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-gray-400 mt-1 text-xs"></i>
+                                <span>协助测量地铁广告布局与投放尺寸，确保广告物料精准落地。</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Job 3: 其他项目 -->
+                <div class="group bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2 border-t-4 border-gray-300">
+                    <div class="p-8">
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="bg-gray-200 text-gray-600 text-xs font-bold px-3 py-1 rounded">项目经历</div>
+                            <i class="fa-solid fa-video text-gray-300 text-2xl group-hover:text-gray-800 transition-colors"></i>
+                        </div>
+                        <h3 class="text-xl font-black mb-1">内容与活动策划</h3>
+                        <p class="text-gray-600 font-bold mb-4">抖音导演 / 校园活动</p>
+                        
+                        <ul class="space-y-3 text-sm text-gray-600 leading-relaxed mb-6">
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-gray-400 mt-1 text-xs"></i>
+                                <span><strong>抖音内容导演：</strong>策划拍摄12期情感短剧，互动率提升25%，单条最高播放2W+。</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-gray-400 mt-1 text-xs"></i>
+                                <span><strong>音乐节策划：</strong>吉他社社长，全流程策划校园音乐节（预算/场地/嘉宾）。</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 吉祥物/个性化元素 -->
+        <div class="container mx-auto px-6 relative h-20 mt-10">
+             <div class="absolute right-10 bottom-0 mascot-hover transition-transform duration-300 cursor-pointer">
+                <!-- SVG: 拿着笔的创意熊 -->
+                <svg width="120" height="120" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g filter="url(#shadow)">
+                        <circle cx="50" cy="50" r="45" fill="#FF6600"/>
+                        <!-- 耳朵 -->
+                        <circle cx="35" cy="40" r="8" fill="#333"/>
+                        <circle cx="65" cy="40" r="8" fill="#333"/>
+                        <!-- 脸 -->
+                        <path d="M45 55 Q50 60 55 55" stroke="#333" stroke-width="3" stroke-linecap="round"/>
+                        <!-- 拿着笔的手 -->
+                         <path d="M70 60 L85 45 L90 50 L75 65 Z" fill="#FFF"/> <!-- 笔 -->
+                         <circle cx="70" cy="65" r="8" fill="#F5F5F5" stroke="#333"/> <!-- 手 -->
+                    </g>
+                    <defs>
+                        <filter id="shadow" x="0" y="0" width="100" height="100" filterUnits="userSpaceOnUse">
+                            <feDropShadow dx="2" dy="4" stdDeviation="2" flood-opacity="0.2"/>
+                        </filter>
+                    </defs>
+                </svg>
+                <div class="bg-white px-4 py-2 rounded-full shadow-lg absolute -top-8 -left-20 border-2 border-brand text-xs font-bold whitespace-nowrap">
+                    随时联系！
+                    <div class="absolute bottom-[-6px] right-6 w-3 h-3 bg-white border-b-2 border-r-2 border-brand rotate-45"></div>
+                </div>
+             </div>
+        </div>
+    </section>
+
+    <!-- 4. About Section 个人总结 (现已移后) -->
+    <section id="about" class="py-24 bg-dot-pattern relative overflow-hidden">
+        <!-- 背景装饰大字 -->
+        <div class="absolute top-10 right-0 md:right-20 text-[120px] md:text-[200px] decor-text select-none z-0 opacity-60">
+            PROFILE
+        </div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <!-- 左侧：图片与数据 -->
+                <div class="relative group">
+                    <div class="absolute -inset-4 bg-brand rounded-lg -rotate-2 opacity-10 group-hover:rotate-1 transition-transform"></div>
+                    <!-- 替换为您的个人形象照或工作照 -->
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2670&auto=format&fit=crop" 
+                         class="relative rounded-lg shadow-2xl w-full object-cover aspect-[4/3] grayscale hover:grayscale-0 transition-all duration-500" 
+                         alt="Chen Lulong">
+                    
+                    <!-- 浮动数据卡片 -->
+                    <div class="absolute -bottom-6 -right-6 bg-white p-6 rounded shadow-xl border-t-4 border-brand hidden md:block">
+                        <p class="text-xs text-gray-500 font-bold mb-1">语言能力</p>
+                        <div class="flex gap-2">
+                            <span class="bg-gray-100 px-2 py-1 rounded text-sm font-bold">英语 CET-4</span>
+                            <span class="bg-brand/10 text-brand px-2 py-1 rounded text-sm font-bold">日语 N2</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 右侧：个人总结 -->
+                <div>
+                    <div class="flex items-center gap-3 mb-6">
+                        <i class="fa-solid fa-user text-brand text-2xl"></i>
+                        <h2 class="text-3xl md:text-4xl font-black">个人总结</h2>
+                    </div>
+                    
+                    <h3 class="text-2xl md:text-3xl font-bold mb-6 leading-tight">
+                        精通内容策划、视觉设计<br>
+                        与 <span class="text-brand bg-brand/10 px-2">AI 自动化应用</span>
+                    </h3>
+                    
+                    <div class="text-gray-600 leading-loose space-y-4 text-lg">
+                        <p>
+                            我是一名复合型人才，拥有广告学背景（厦门大学嘉庚学院），精通内容策划、视觉设计与数据运营。
+                        </p>
+                        <ul class="list-disc list-inside space-y-2 marker:text-brand">
+                            <li><strong>全球化协作：</strong>英语CET-4、日语JLPT N2，适应跨文化工作环境。</li>
+                            <li><strong>实战驱动：</strong>适应力强，成熟项目能稳健运营，新项目能快速起量。</li>
+                            <li><strong>技术赋能：</strong>擅长利用 AI Vibe Coding 构建自动化工作流，主动推动业绩增长。</li>
+                        </ul>
+                    </div>
+
+                    <div class="mt-8 flex gap-4">
+                        <div class="text-center px-4 py-2 bg-white rounded border border-gray-200 shadow-sm">
+                            <div class="text-2xl font-black text-brand">563%</div>
+                            <div class="text-xs text-gray-500 font-bold">单项目增长</div>
+                        </div>
+                        <div class="text-center px-4 py-2 bg-white rounded border border-gray-200 shadow-sm">
+                            <div class="text-2xl font-black text-brand">2-5倍</div>
+                            <div class="text-xs text-gray-500 font-bold">AI提效</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Skills & Education Section 技能与教育 -->
+    <section id="skills" class="py-24 bg-white relative">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-16">
+                <!-- 技能 -->
+                <div>
+                    <h2 class="text-3xl font-black mb-8 flex items-center gap-3">
+                        <span class="w-2 h-8 bg-brand block"></span>
+                        专业技能
+                    </h2>
+                    
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="font-bold text-gray-700 mb-3">内容创作 & 视觉设计</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="skill-tag">图文策划</span>
+                                <span class="skill-tag">短视频剧本</span>
+                                <span class="skill-tag">Photoshop</span>
+                                <span class="skill-tag">Canva</span>
+                                <span class="skill-tag">剪映/达芬奇</span>
+                                <span class="skill-tag">用户共情</span>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-bold text-gray-700 mb-3">数据运营 & 增长</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="skill-tag">SEO撰写</span>
+                                <span class="skill-tag">流量运营</span>
+                                <span class="skill-tag">Google Analytics</span>
+                                <span class="skill-tag">公众号后台</span>
+                                <span class="skill-tag">百度统计</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h4 class="font-bold text-brand mb-3">AI & 效率工具</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="skill-tag bg-brand text-white border-brand">Gemini Vibe Coding</span>
+                                <span class="skill-tag">AI自动化流</span>
+                                <span class="skill-tag">主流AI工具</span>
+                                <span class="skill-tag">Excel</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 教育背景 -->
+                <div>
+                     <h2 class="text-3xl font-black mb-8 flex items-center gap-3">
+                        <span class="w-2 h-8 bg-gray-300 block"></span>
+                        教育经历
+                    </h2>
+                    <div class="bg-gray-50 p-6 rounded-lg border border-gray-100">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold">厦门大学嘉庚学院</h3>
+                            <span class="text-sm font-bold text-gray-400">2021.09 - 2025.06</span>
+                        </div>
+                        <p class="text-brand font-bold mb-4">广告学 | 本科</p>
+                        <p class="text-sm text-gray-600 mb-4">
+                            <strong>主修：</strong>新媒体传播、创意写作、消费者心理学、视觉设计
+                        </p>
+                        <div class="bg-white p-4 rounded border border-gray-100 text-sm text-gray-500">
+                            <strong>毕业设计：</strong>导演微沃啤酒视频广告，统筹3人团队完成两条影片。
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Footer & Contact -->
+    <footer id="contact" class="bg-brand-dark text-white pt-20 pb-10">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-start gap-10">
+                
+                <!-- Contact Info -->
+                <div class="md:w-1/2">
+                    <div class="flex items-center gap-2 font-black text-3xl mb-8">
+                        CHEN LULONG
+                    </div>
+                    <p class="text-gray-400 mb-6">
+                        感谢您阅读我的简历。我正在寻找 <strong>广告/公关/游戏广告创意策划</strong> 的全职机会。<br>
+                        随时欢迎联系我进行深入交流。
+                    </p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded bg-gray-700 flex items-center justify-center text-brand">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <span class="font-bold text-lg">136-0081-3384</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded bg-gray-700 flex items-center justify-center text-brand">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <span class="font-bold text-lg">929047309@qq.com</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded bg-gray-700 flex items-center justify-center text-brand">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <span class="font-bold text-lg">福建 · 福州</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Footer CTA (已修改为一键复制) -->
+                <div class="md:w-1/3 bg-gray-800 p-8 rounded-xl border border-gray-700">
+                    <h4 class="font-bold mb-4 text-brand">让我们开始合作</h4>
+                    <p class="text-sm text-gray-400 mb-6">
+                        我有信心通过创意与数据思维，为您的团队带来实质性的增长。
+                    </p>
+                    <button onclick="copyContact('929047309@qq.com', this)" class="w-full block bg-brand text-white text-center py-4 rounded font-bold hover:bg-brand-hover transition-colors shadow-lg shadow-brand/20">
+                        <i class="fa-regular fa-copy mr-2"></i>一键复制邮箱地址
+                    </button>
+                    <p class="text-center mt-3 text-xs text-gray-500">点击按钮直接复制：929047309@qq.com</p>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 mt-16 pt-8 text-center text-xs text-gray-500">
+                &copy; 2026 Chen Lulong. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- 一键复制的 JavaScript 脚本 -->
+    <script>
+        function copyContact(text, btnElement) {
+            // 兼容各种浏览器的复制方法
+            const textArea = document.createElement("textarea");
+            textArea.value = text;
+            
+            // 防止滚动到底部
+            textArea.style.top = "0";
+            textArea.style.left = "0";
+            textArea.style.position = "fixed";
+            
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            
+            try {
+                document.execCommand('copy');
+                // 视觉反馈：变为绿色并修改文字
+                const originalHTML = btnElement.innerHTML;
+                const originalClasses = btnElement.className;
+                
+                btnElement.innerHTML = '<i class="fa-solid fa-check mr-2"></i>已复制到剪贴板！';
+                btnElement.classList.remove('bg-brand', 'hover:bg-brand-hover');
+                btnElement.classList.add('bg-green-600', 'hover:bg-green-700');
+                
+                // 2秒后恢复原状
+                setTimeout(() => {
+                    btnElement.innerHTML = originalHTML;
+                    btnElement.className = originalClasses;
+                }, 2000);
+            } catch (err) {
+                alert('复制失败，请手动复制邮箱：' + text);
+            }
+            
+            document.body.removeChild(textArea);
+        }
+    </script>
+</body>
+</html>
